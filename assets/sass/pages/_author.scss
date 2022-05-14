@@ -1,0 +1,212 @@
+/* Author Area */
+
+.author-area {}
+
+.author-padding {
+    padding: 20px;
+}
+
+.single-author {
+    &.bg-color-two {
+        .single-author {
+            &-thumb {
+                background-color: $bg-color-two;
+            }
+        }
+    }
+    &.bg-color-three {
+        .single-author {
+            &-thumb {
+                background-color: $bg-color-three;
+            }
+        }
+    }
+    &.bg-color-four {
+        .single-author {
+            &-thumb {
+                background-color: $bg-color-four;
+            }
+        }
+    }
+    &-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &-contents {
+        flex: 1;
+        &-title {
+            font-size: 18px;
+            line-height: 28px;
+            margin: 0;
+        }
+        &-subtitle {
+            font-size: 15px;
+        }
+    }
+    &-thumb {
+        width: 90px;
+        height: 90px;
+        background-color: $bg-color-one;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.single-author-two {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    background-color: unset;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        right: -30px;
+        height: 120px;
+        width: 200px;
+        background-color: $bg-color-one;
+        z-index: -1;
+        border-radius: 50% 0 0 50%;
+        @include transform(rotate(30deg));
+    }
+    &.author-padding {
+        padding: 0;
+    }
+    &-wrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    &-contents {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+        padding: 20px 20px;
+        background-color: rgba($bg-color-one, .1);
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            right: -300px;
+            height: 100%;
+            width: 300px;
+            background-color: rgba($bg-color-one, .1);
+            z-index: -1;
+        }
+        &-title {
+            font-size: 18px;
+            line-height: 28px;
+            margin: 0;
+        }
+        &-subtitle {
+            font-size: 15px;
+        }
+    }
+    &-thumb {
+        max-width: 110px;
+        position: relative;
+        z-index: 9;
+    }
+    &.bg-color-two {
+        &::after {
+            background-color: $bg-color-two;
+        }
+        .single-author-two-contents {
+            background-color: rgba($bg-color-two, .1);
+            &::after {
+                background-color: rgba($bg-color-two, .1);
+            }
+        }
+    }
+    &.bg-color-three {
+        &::after {
+            background-color: $bg-color-three;
+        }
+        .single-author-two-contents {
+            background-color: rgba($bg-color-three, .1);
+            &::after {
+                background-color: rgba($bg-color-three, .1);
+            }
+        }
+    }
+    &.bg-color-four {
+        &::after {
+            background-color: $bg-color-four;
+        }
+        .single-author-two-contents {
+            background-color: rgba($bg-color-four, .1);
+            &::after {
+                background-color: rgba($bg-color-four, .1);
+            }
+        }
+    }
+}
+
+
+/* Author Inner */
+
+.author-details-wrapper {}
+
+.author-inner-padding {
+    padding: 20px;
+}
+
+.single-author-details {
+    &-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+    &-item {
+        &-flex {
+            display: flex;
+            align-items: center;
+            gap: 12px 20px;
+        }
+        &-thumb {
+            &.bg-image {
+                height: 65px;
+                width: 65px;
+            }
+        }
+        &-contents {
+            &-title {
+                font-size: 20px;
+                line-height: 26px;
+                @include transition(200ms);
+                &:hover {
+                    color: var(--main-color-one);
+                }
+            }
+        }
+    }
+}
+
+.about-author-details {
+    &-content {
+        &-title {
+            font-size: 20px;
+            line-height: 32px;
+        }
+        &-para {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+}
+
+.about-author-details-border {
+    border-top: 2px solid rgba($steam-color, .4);
+}

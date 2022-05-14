@@ -1,0 +1,62 @@
+/* ProgressBar Css */
+
+.progress-bar-area {}
+
+.flex-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .single-progress-star {
+        min-width: 50px;
+    }
+}
+
+.single-progress {
+    &:not(:last-child) {
+        margin-bottom: 19px;
+        @include responsive(xl) {
+            margin-bottom: 10px;
+        }
+        @include responsive(lg) {
+            margin-bottom: 10px;
+        }
+    }
+    &-skils {
+        width: 100%;
+        background: $steam-color;
+        border-radius: 3px;
+        height: 12px;
+    }
+    &-bars {
+        height: 100%;
+        width: 0%;
+        background: $review-color;
+        border-radius: 3px;
+        position: relative;
+        transition: all 1.5s;
+        &-count {
+            position: absolute;
+            right: 0;
+            top: -40px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            background: $review-color;
+            padding: 5px 10px;
+            &::before {
+                position: absolute;
+                content: "";
+                height: 0;
+                width: 0;
+                right: 0;
+                top: 100%;
+                border: 12px solid transparent;
+                border-top-color: $review-color;
+                border-left-width: 7px;
+                border-right-width: 7px;
+                margin-top: -1px;
+            }
+        }
+        .count-one {}
+    }
+}

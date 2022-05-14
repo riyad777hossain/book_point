@@ -1,0 +1,193 @@
+/* Topbar area */
+
+.topbar-area {
+    position: relative;
+}
+
+.topbar-padding {
+    padding: 20px 0 0;
+}
+
+.topbar-bottom-border {
+    border-bottom: 2px solid rgba($steam-color, .3);
+    padding-bottom: 20px;
+}
+
+.topbar-logo-wrapper {
+    gap: 30px;
+}
+
+.search-content-wrapper {
+    flex: 1;
+}
+
+.topbar-right-list {
+    gap: 20px;
+    @include responsive(allPhone) {
+        padding-top: 20px;
+    }
+    &.right-flex {
+        justify-content: flex-end;
+        @include responsive(allPhone) {
+            justify-content: center;
+        }
+    }
+    .topbar-list {
+        justify-content: flex-end;
+    }
+}
+
+.topbar-list {
+    gap: 20px;
+    &-item {
+        font-size: 16px;
+        &-link {}
+    }
+}
+
+.category-search {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 2px;
+    .nice-select {
+        border: 0;
+        outline: none;
+        height: 100%;
+        line-height: 50px;
+        &::after {
+            right: 15px;
+        }
+    }
+    &.navbar-category {
+        position: unset;
+        display: inline-block;
+        width: 250px;
+        @include responsive(allPhone) {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .nice-select {
+            background-color: var(--main-color-one);
+            color: $white;
+            &::after {
+                border-bottom: 2px solid $white;
+                border-right: 2px solid $white;
+            }
+        }
+    }
+    .nice-select {
+        color: var(--light-color);
+        .list {
+            background-color: var(--main-color-one);
+            .option {
+                color: $white;
+                &:hover {
+                    background-color: var(--secondary-color);
+                }
+                &.selected {
+                    &.focus {
+                        background-color: var(--secondary-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lang-select {
+    .nice-select {
+        border: 1px solid rgba($steam-color, .3);
+        border-radius: 0;
+        z-index: 96;
+        color: var(--light-color);
+        height: 55px;
+        line-height: 55px;
+        @include responsive(allPhone) {
+            height: 40px;
+            line-height: 40px;
+        }
+        .nice-select-search {
+            @include responsive(allPhone) {
+                min-height: 28px;
+                padding: 2px 5px;
+            }
+        }
+        &.open {
+            border-color: 1px solid rgba($steam-color, .3);
+        }
+        .list {
+            background-color: var(--main-color-one);
+            .option {
+                color: $white;
+                &:hover {
+                    background-color: var(--secondary-color);
+                }
+                &.selected {
+                    &.focus {
+                        background-color: var(--secondary-color);
+                    }
+                }
+            }
+        }
+    }
+    &:focus {}
+}
+
+.nav-color-two,
+.color-two {
+    .category-search {
+        &.navbar-category {
+            .nice-select {
+                background-color: var(--main-color-two);
+                .list {
+                    background-color: var(--main-color-two);
+                    .option {
+                        &:hover {
+                            background-color: var(--secondary-color-two);
+                        }
+                        &.selected {
+                            &.focus {
+                                background-color: var(--secondary-color-two);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.color-two {
+    .search-input {
+        button {
+            background-color: var(--main-color-two);
+        }
+    }
+    .category-search {
+        .nice-select {
+            background-color: var(--main-color-two);
+            .list {
+                background-color: var(--main-color-two);
+            }
+        }
+    }
+    .lang-select {
+        .nice-select {
+            .list {
+                background-color: var(--main-color-two);
+                .option {
+                    &:hover {
+                        background-color: var(--secondary-color-two);
+                    }
+                    &.selected {
+                        &.focus {
+                            background-color: var(--secondary-color-two);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

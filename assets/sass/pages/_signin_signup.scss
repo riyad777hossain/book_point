@@ -1,0 +1,154 @@
+/* Sign In Sign Up */
+
+.signin-area {}
+
+.signin-padding {
+    padding: 30px;
+    @include responsive(xxs) {
+        padding: 20px;
+    }
+    @include responsive(vxxs) {
+        padding: 20px 10px;
+    }
+}
+
+.signin-wrappers {
+    max-width: 500px;
+    margin: 0 auto;
+    @include box-shadow(0, 0, 50px, rgba($steam-color, .5));
+    &.style-02 {
+        max-width: 600px;
+    }
+}
+
+.single-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin: -6px 0 0;
+}
+
+.input-flex-item {
+    display: flex;
+    align-items: center;
+    @include responsive(xxs) {
+        display: block;
+    }
+    .single-input {
+        width: 100%;
+        &:not(:first-child) {
+            margin-left: 24px;
+            @include responsive(xxs) {
+                margin-left: 0;
+            }
+        }
+        .form--control {
+            border: 1px solid rgba($steam-color, .4);
+        }
+    }
+}
+
+.single-input {
+    display: inline-block;
+    width: 100%;
+    .form--control {
+        border: 1px solid rgba($steam-color, .4);
+        transition: all .3s;
+        box-shadow: 0 0 10px transparent;
+        &:focus {
+            border-color: rgba(var(--main-color-one-rgb), .3);
+            box-shadow: 0 0 10px rgba(var(--main-color-one-rgb), .1);
+        }
+    }
+    .form--message {
+        padding: 15px 0 0 15px;
+    }
+}
+
+.label-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--heading-color);
+    @include responsive(xxs) {
+        font-size: 15px;
+    }
+}
+
+.single-checbox {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.or-contents {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background: rgba($steam-color, .4);
+        width: 100%;
+        height: 1px;
+        z-index: -1;
+        transform: translateY(-50%);
+    }
+    .or-para {
+        background: $white;
+        padding: 10px 30px;
+        color: var(--light-color);
+    }
+}
+
+.signin-others {
+    .single-other-signin {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        .btn-others {
+            padding: 13px 10px;
+            display: inline-block;
+            border: 1px solid rgba($steam-color, .4);
+            color: var(--light-color);
+            text-align: center;
+            transition: all .3s;
+            &:hover {
+                background: var(--main-color-one);
+                color: $white;
+            }
+            img {
+                margin-right: 5px;
+            }
+            .signin-para {}
+        }
+    }
+}
+
+
+/* Toggle Password hide Show */
+
+.single-input {
+    position: relative;
+    z-index: 1;
+}
+
+.toggle-password {
+    position: absolute;
+    bottom: 13px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.hide-icon {
+    display: none;
+}
+
+.toggle-password.show-pass .hide-icon {
+    display: block;
+}
+
+.toggle-password.show-pass .show-icon {
+    display: none;
+}

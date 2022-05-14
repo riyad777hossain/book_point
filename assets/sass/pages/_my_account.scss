@@ -1,0 +1,390 @@
+/* My Account Css */
+
+.account-sidebar {
+    padding: 0;
+    &-list {
+        a {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            gap: 15px;
+            padding: 17px 25px;
+            cursor: pointer;
+            -webkit-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+            @include responsive(allPhone) {
+                font-size: 15px;
+                gap: 10px;
+                padding: 15px 10px;
+            }
+        }
+        &:not(:last-child) {
+            a {
+                margin-bottom: 10px;
+            }
+        }
+        &.active {
+            a {
+                background: var(--main-color-one);
+                font-weight: 500;
+                color: $white;
+            }
+        }
+        &:hover {
+            a {
+                background: var(--main-color-one);
+                font-weight: 500;
+                color: $white;
+            }
+        }
+    }
+}
+
+
+/* My Account Responsive */
+
+.account-responsive {
+    display: none;
+    @include responsive(allPhone) {
+        display: block;
+    }
+    &-icon {
+        font-size: 24px;
+        cursor: pointer;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 40px;
+        width: 40px;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background: var(--main-color-one);
+        -webkit-box-shadow: 0 0 10px rgba(#ddd, .5);
+        box-shadow: 0 0 10px rgba(#ddd, .5);
+        z-index: 95;
+        color: $white;
+        margin-bottom: 10px;
+    }
+}
+
+.account-icon-close {
+    @include responsive(allPhone) {
+        background: $white;
+        position: relative;
+        z-index: 1;
+        position: absolute;
+        left: -100%;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        z-index: 99;
+        width: 250px;
+        height: 100vh;
+        -webkit-box-shadow: 0 0 10px rgba($black, .1);
+        box-shadow: 0 0 10px rgba($black, .1);
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            left: 0;
+        }
+    }
+    &-bars {
+        position: absolute;
+        right: 0px;
+        top: 0;
+        font-size: 24px;
+        color: $white;
+        background: var(--main-color-one);
+        -webkit-box-shadow: 0 0 10px rgba(#ddd, .5);
+        box-shadow: 0 0 10px rgba(#ddd, .5);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        border-radius: 0px;
+        display: none;
+        @include responsive(allPhone) {
+            display: block;
+        }
+        i {
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            text-align: center;
+            height: 40px;
+            width: 40px;
+        }
+    }
+}
+
+
+/* Order css */
+
+.order-wrapper-contents {}
+
+.single-order-padding {
+    padding: 20px;
+}
+
+.single-order {
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    &-inner {
+        &.order-inner-padding-bottom {
+            padding-bottom: 20px;
+        }
+    }
+    &-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        @include responsive(xxs) {
+            gap: 10px 20px;
+        }
+    }
+    &-left {
+        &-flex {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            @include responsive(lg) {
+                gap: 15px 20px;
+            }
+            @include responsive(allPhone) {
+                gap: 15px 20px;
+            }
+        }
+    }
+    &-product {
+        &:not(:first-child) {
+            padding-top: 20px;
+            border-top: 1px solid rgba($steam-color, .5);
+        }
+        &:not(:last-child) {
+            padding-bottom: 20px;
+        }
+        &-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        &-contents {
+            flex: 1;
+            &-title {
+                font-size: 24px;
+                @include responsive(xl) {
+                    font-size: 22px;
+                }
+                @include responsive(lg) {
+                    font-size: 22px;
+                }
+                @include responsive(allPhone) {
+                    font-size: 22px;
+                }
+                @include responsive(sm) {
+                    font-size: 20px;
+                }
+                @include responsive(xxs) {
+                    font-size: 18px;
+                }
+            }
+            &-subtitle {
+                font-size: 15px;
+            }
+            .price-update-through {
+                .flash-price {
+                    font-size: 24px;
+                }
+            }
+        }
+        &-thumb {
+            &.bg-image {
+                height: 170px;
+                width: 120px;
+                @include responsive(vxxs) {
+                    display: inline-block;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &-item {
+            &.item-product {
+                flex-basis: 60%;
+                @include responsive(sm) {
+                    flex-basis: 100%;
+                }
+            }
+            &-flex {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                @include responsive(lg) {
+                    gap: 15px;
+                }
+                @include responsive(vxxs) {
+                    display: block;
+                }
+            }
+        }
+        &-price {
+            font-size: 28px;
+            @include responsive(xl) {
+                font-size: 24px;
+            }
+            @include responsive(lg) {
+                font-size: 24px;
+            }
+            @include responsive(allPhone) {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.order-btn-wrapper {
+    .order-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+
+/* Order Review css */
+
+.single-review {
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    &-flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 30px;
+        @include responsive(sm) {
+            gap: 20px;
+        }
+        @include responsive(xxs) {
+            display: block;
+        }
+    }
+    &-inner {}
+    &-thumb {
+        &.bg-image {
+            height: 170px;
+            width: 120px;
+            @include responsive(xxs) {
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+        }
+    }
+    &-contents {
+        flex: 1;
+        &-flex {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+        }
+        &-title {
+            font-size: 20px;
+            @include responsive(vxxs) {
+                font-size: 18px;
+            }
+        }
+        &-subtitle {
+            font-size: 15px;
+        }
+        &-para {
+            font-size: 16px;
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+/* Order Address css */
+
+.single-address-padding {
+    padding: 30px;
+}
+
+.single-address {
+    &.single-address-padding {
+        @include responsive(sm) {
+            padding: 20px;
+        }
+    }
+    &-contents {
+        &-title {
+            font-size: 22px;
+            line-height: 32px;
+            margin: -5px 0 0;
+        }
+        &-para {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        .edit-address-btn {
+            font-size: 16px;
+            color: var(--main-color-one);
+            display: inline-block;
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+
+/* Account Details Css */
+
+.single-account-details {
+    &.single-address-padding {
+        @include responsive(xxs) {
+            padding: 20px;
+        }
+    }
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    &-form {}
+    &-title {
+        font-size: 24px;
+        line-height: 32px;
+        margin: -5px 0 0;
+        @include responsive(xxs) {
+            font-size: 22px;
+        }
+        @include responsive(vxxs) {
+            font-size: 20px;
+        }
+    }
+}

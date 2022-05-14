@@ -1,0 +1,169 @@
+/* Special Area */
+
+.special-area {}
+
+.special-padding {
+    padding: 30px;
+    @include responsive(xl) {
+        padding: 20px;
+    }
+    @include responsive(xxs) {
+        padding: 20px;
+    }
+    @include responsive(vxxs) {
+        padding: 20px 10px;
+    }
+}
+
+.single-special {
+    height: 100%;
+    &.bg-color-one {
+        .browse-btn {
+            color: $bg-color-one;
+        }
+    }
+    &.bg-color-two {
+        .browse-btn {
+            color: $bg-color-two;
+        }
+    }
+    &.bg-color-three {
+        .browse-btn {
+            color: $bg-color-three;
+        }
+    }
+    &-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 20px;
+        @include responsive(sm) {
+            flex-wrap: wrap;
+            flex-flow: column-reverse;
+            align-items: flex-start;
+        }
+    }
+    &-contents {
+        flex: 1;
+        &-subtitle {
+            font-size: 16px;
+            line-height: 28px;
+            @include responsive(xs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+        &-title {
+            font-size: 32px;
+            line-height: 42px;
+            @include responsive(xl) {
+                font-size: 28px;
+                line-height: 36px;
+            }
+            @include responsive(xs) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+            @include responsive(vxxs) {
+                font-size: 22px;
+                line-height: 28px;
+            }
+            &-two {
+                font-size: 28px;
+                margin: -8px 0 0;
+                @include responsive(xs) {
+                    font-size: 26px;
+                }
+                @include responsive(vxxs) {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    &-thumb {
+        max-width: 380px;
+        @include responsive(xl) {
+            max-width: 220px;
+        }
+        @include responsive(xxl) {
+            max-width: 250px;
+        }
+    }
+}
+
+
+/* Special area Two */
+
+.special-area-two {}
+
+.single-special-two {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    &:nth-child(2n+2) {
+        &::after {
+            right: auto;
+            left: -30px;
+            @include transform(rotate(-45deg));
+        }
+        .single-special-flex {
+            flex-direction: row-reverse;
+            @include responsive(sm) {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+    &.center-text {
+        .single-special-thumb {
+            margin: auto;
+        }
+    }
+    &.bg-color-two {
+        &::after {
+            background-color: $bg-color-two;
+        }
+        .browse-btn {
+            color: $bg-color-two;
+        }
+    }
+    &.bg-color-three {
+        &::after {
+            background-color: $bg-color-three;
+        }
+        .browse-btn {
+            color: $bg-color-three;
+        }
+    }
+    &.bg-color-four {
+        &::after {
+            background-color: $bg-color-four;
+        }
+        .browse-btn {
+            color: $bg-color-four;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        height: 200px;
+        width: 150px;
+        right: -30px;
+        top: -50px;
+        background-color: $bg-color-one;
+        border-radius: 0 0 50% 50%;
+        @include transform(rotate(45deg));
+        z-index: -1;
+    }
+    &-thumb {
+        max-width: 230px;
+    }
+    .browse-btn {
+        color: $bg-color-one;
+    }
+}

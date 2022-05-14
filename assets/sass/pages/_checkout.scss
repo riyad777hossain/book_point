@@ -1,0 +1,268 @@
+/* Checkout */
+
+.checkout-area {}
+
+.checkout-single-padding {
+    padding: 30px;
+    @include responsive(xxs) {
+        padding: 20px;
+    }
+}
+
+.checkout-inner {
+    .checkout-title {
+        font-size: 24px;
+        line-height: 32px;
+        margin: -5px 0 0;
+    }
+}
+
+.checkout-signup-form-wrapper {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s linear;
+    &.active {
+        height: auto;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 30px;
+        background: $white;
+    }
+}
+
+.checkout-address-form-wrapper {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s linear;
+    &.active {
+        height: auto;
+        visibility: visible;
+        opacity: 1;
+        margin-top: 30px;
+        background: $white;
+    }
+}
+
+.create-accounts {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    color: var(--heading-color) !important;
+    @include responsive(allPhone) {
+        font-size: 18px;
+    }
+    @include responsive(xs) {
+        font-size: 16px;
+    }
+    &:hover {
+        color: var(--heading-color);
+    }
+    &::before {
+        display: flex;
+        height: 20px;
+        width: 20px;
+        border: 1px solid $STEAM;
+        content: '';
+        transition: all .2s;
+    }
+    &.active {
+        &::before {
+            content: "\f00c";
+            @include linefont;
+            background: var(--main-color-one);
+            color: $white;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border-color: var(--main-color-one);
+        }
+    }
+}
+
+.checkout-form {
+    .input-flex-item {
+        .single-input {
+            .form--message {
+                height: 120px;
+            }
+        }
+    }
+    .checkbox-inlines {
+        .check-input {}
+        .checkbox-label {
+            color: var(--heading-color);
+            font-size: 18px;
+        }
+    }
+}
+
+.order-summery-padding {
+    padding: 30px;
+    @include responsive(xl) {
+        padding: 20px;
+    }
+    @include responsive(lg) {
+        padding: 20px;
+    }
+    @include responsive(xxs) {
+        padding: 20px;
+    }
+    @include responsive(vxxs) {
+        padding: 20px 10px;
+    }
+}
+
+.checkout-cart-wrapper {
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.checkout-sticky-content {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+.checkout-order-summery {}
+
+.order-summery-contents {
+    &-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.summary-border {
+    border-top: 1px solid rgba($steam-color, .4);
+}
+
+.single-summary {
+    &-list {
+        padding-top: 20px;
+        &:not(:last-child) {
+            padding-bottom: 20px;
+        }
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            &-title {
+                font-size: 16px;
+                line-height: 24px;
+                flex-basis: 50%;
+            }
+            .quantity {
+                font-size: 15px;
+                margin-right: 5px;
+                display: flex;
+                align-items: center;
+                input {
+                    border: 0;
+                    outline: none;
+                    width: 30px;
+                    margin-left: 10px;
+                    font-weight: 500;
+                }
+            }
+            .price {
+                font-size: 18px;
+                color: var(--heading-color);
+            }
+        }
+    }
+}
+
+.coupon-form {
+    position: relative;
+    .single-input {
+        .form--control {
+            height: 60px;
+            background: $white;
+            border: 1px solid rgba($steam-color, .4);
+            transition: all .3s;
+            &:focus {
+                border-color: rgba(var(--main-color-one-rgb), .3);
+                box-shadow: 0 0 10px rgba(var(--main-color-one-rgb), .1);
+            }
+        }
+    }
+    .apply-coupon {
+        position: absolute;
+        right: 5px;
+        height: 50px;
+        border: 0;
+        outline: none;
+        padding: 5px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid transparent;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--main-color-one);
+        color: $white;
+        transition: all .3s;
+        &:hover {
+            background: none;
+            color: var(--main-color-one);
+            border-color: var(--main-color-one);
+        }
+    }
+}
+
+.payment-inlines {
+    .payment-card {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        .single-card {
+            background: $white;
+            padding: 5px 10px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 10px;
+            border: 2px solid transparent;
+            transition: all .3s;
+            &.active {
+                border-color: var(--main-color-one);
+                &::before {
+                    content: "\f00c";
+                    @include linefont;
+                    background: var(--main-color-one);
+                    color: $white;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    height: 16px;
+                    width: 16px;
+                    font-size: 10px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -7px;
+                    right: -7px;
+                    z-index: 9;
+                    transition: all .3s;
+                }
+            }
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+}

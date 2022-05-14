@@ -1,0 +1,101 @@
+/* Isotope List */
+
+.filter-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    @include responsive(allPhone) {
+        gap: 10px;
+    }
+    .list {
+        font-size: 16px;
+        line-height: 26px;
+        cursor: pointer;
+        @include transition(200ms);
+    }
+}
+
+.category-grid-list {
+    justify-content: center;
+    .list {
+        padding: 8px 20px;
+        border: 1px solid rgba($steam-color, .4);
+        @include responsive(allPhone) {
+            font-size: 15px;
+            padding: 6px 15px;
+        }
+        @include responsive(xs) {
+            padding: 5px 12px;
+        }
+        @include responsive(xxs) {
+            padding: 4px 10px;
+            font-size: 14px;
+        }
+        @include responsive(vxxs) {
+            padding: 3px 8px;
+        }
+        &.active {
+            background-color: var(--main-color-one);
+            border-color: var(--main-color-one);
+            color: $white;
+        }
+    }
+    &.style-02 {
+        .list {
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            @include responsive(allPhone) {
+                padding: 7px 15px;
+                gap: 20px;
+            }
+            &.active {
+                background-color: rgba(var(--main-color-one-rgb), .3);
+                border-color: var(--main-color-one);
+                color: var(--main-color-one);
+            }
+        }
+    }
+}
+
+.color-two {
+    .category-grid-list {
+        .list {
+            &.active {
+                background-color: var(--main-color-two);
+                border-color: var(--main-color-two);
+                color: $white;
+            }
+        }
+        .checkbox-inlines {
+            .check-input {
+                &:checked {
+                    background: var(--main-color-two);
+                    border-color: var(--main-color-two);
+                    background: var(--main-color-two);
+                }
+            }
+        }
+        &.style-02 {
+            .list {
+                &.active {
+                    background-color: rgba(var(--main-color-two-rgb), .3);
+                    border-color: var(--main-color-two);
+                    color: var(--main-color-two);
+                }
+            }
+        }
+    }
+}
+
+
+/* Category Filter Book */
+
+.category-filter {}
+
+.category-border-top {
+    border-top: 2px solid rgba($steam-color, .4);
+}

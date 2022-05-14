@@ -1,0 +1,45 @@
+/* Purchase Success */
+
+.success-area {}
+
+.success-wrappers {
+    max-width: 600px;
+    margin: 0 auto;
+    @include box-shadow(0, 0, 50px, rgba($steam-color, .5));
+}
+
+.success-contents {
+    &-title {
+        font-size: 28px;
+        line-height: 36px;
+        margin: -6px 0 0;
+        @include responsive(xxs) {
+            font-size: 26px;
+        }
+        @include responsive(vxxs) {
+            font-size: 24px;
+        }
+    }
+    &-para {
+        font-size: 16px;
+        line-height: 26px;
+        @include responsive(xxs) {
+            font-size: 15px;
+        }
+        @include responsive(vxxs) {
+            font-size: 14px;
+        }
+    }
+    &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        font-size: 28px;
+        background-color: var(--main-color-one);
+        color: $white;
+        border-radius: 50%;
+        margin: auto;
+    }
+}

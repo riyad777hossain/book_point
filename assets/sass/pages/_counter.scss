@@ -1,0 +1,97 @@
+/* Counter  */
+
+.counter-area {
+    position: relative;
+    z-index: 1;
+}
+
+.counter-wrapper {
+    padding: 65px 0 80px;
+    @include responsive(allPhone) {
+        padding: 35px 0 50px;
+    }
+    &-border {
+        border: 2px dashed var(--main-color-one);
+    }
+}
+
+.center-text {
+    .single-counter-count {
+        justify-content: center;
+    }
+}
+
+.about-counter-wrapper {
+    padding-left: 50px;
+    @include responsive(lg) {
+        padding-left: 30px;
+    }
+    @include responsive(allPhone) {
+        padding-left: 0px;
+    }
+}
+
+.single-counter {
+    &-flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        background-color: $bg-counter1;
+        color: $white;
+        font-size: 24px;
+        &.bg-counter2 {
+            background-color: $bg-counter2;
+        }
+        &.bg-counter3 {
+            background-color: $bg-counter3;
+        }
+        &.bg-counter4 {
+            background-color: $bg-counter4;
+        }
+    }
+    &-contents {
+        flex: 1;
+    }
+    &-count {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: -8px 0 0;
+        .odometer {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 36px;
+            @include responsive(xxs) {
+                font-size: 26px;
+            }
+            @include responsive(vxxs) {
+                font-size: 24px;
+            }
+        }
+        &-title {
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 36px;
+            @include responsive(xxs) {
+                font-size: 26px;
+            }
+            @include responsive(vxxs) {
+                font-size: 24px;
+            }
+        }
+    }
+    &-para {
+        font-size: 16px;
+        line-height: 26px;
+        @include responsive(xxs) {
+            font-size: 15px;
+        }
+    }
+}

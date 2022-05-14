@@ -1,0 +1,26 @@
+/* Quantity */
+
+.common-quantity {
+    display: flex;
+    align-items: center;
+    &-input {
+        display: flex;
+        height: 50px;
+        width: 50px;
+        border: 1px solid rgba($steam-color, .4);
+        text-align: center;
+        font-size: 15px;
+    }
+    .substract,
+    .plus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        border: 1px solid rgba($steam-color, .4);
+        cursor: pointer;
+        font-size: 24px;
+    }
+}

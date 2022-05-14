@@ -1,0 +1,150 @@
+/* Promo area */
+
+.promo-area {
+    div[class*=col] {
+        position: relative;
+        &:nth-child(4n+1),
+        &:nth-child(4n+2),
+        &:nth-child(4n+3) {
+            &::after {
+                position: absolute;
+                content: "";
+                right: 0px;
+                top: 0;
+                height: 100%;
+                width: 2px;
+                background-color: rgba($black, .07);
+                @include responsive(xl) {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+                @include responsive(lg) {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+                @include responsive(allPhone) {
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+        }
+        @include responsive(xl) {
+            &:nth-child(3n+1),
+            &:nth-child(3n+2) {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    right: 0px;
+                    top: 0;
+                    height: 100%;
+                    width: 2px;
+                    background-color: rgba($black, .07);
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+        @include responsive(lg) {
+            &:nth-child(2n+1) {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    right: 0px;
+                    top: 0;
+                    height: 100%;
+                    width: 2px;
+                    background-color: rgba($black, .07);
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+        @include responsive(allPhone) {
+            &:nth-child(2n+1) {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    right: 0px;
+                    top: 0;
+                    height: 100%;
+                    width: 2px;
+                    background-color: rgba($black, .07);
+                    visibility: visible;
+                    opacity: 1;
+                    @include responsive(sm) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.single-promo {
+    position: relative;
+    &-icon {
+        color: var(--main-color-one);
+        font-size: 40px;
+        i {}
+    }
+    &-contents {
+        &-title {
+            font-size: 22px;
+            line-height: 30px;
+            color: var(--heading-color);
+            &:hover {
+                color: var(--main-color-one);
+            }
+            @include responsive(xxs) {
+                font-size: 20px;
+            }
+            @include responsive(vxxs) {
+                font-size: 18px;
+            }
+        }
+        &-para {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--extra-light-color);
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.style-02 {
+    &.promo-area {
+        div[class*=col] {
+            &::after {
+                background: 0;
+            }
+        }
+        .single-promo {
+            background-color: $white;
+            height: 100%;
+            padding: 40px;
+            border-top: 2px solid var(--main-color-one);
+            border-radius: 10px;
+        }
+    }
+}
+
+.color-two {
+    .single-promo-contents-title {
+        &:hover {
+            color: var(--main-color-two);
+        }
+    }
+    .single-promo-icon {
+        color: var(--main-color-two);
+    }
+    &.style-02 {
+        .single-promo {
+            border-color: var(--main-color-two);
+        }
+    }
+}

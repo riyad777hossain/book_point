@@ -1,0 +1,146 @@
+/*-------------------------
+    Section Title
+-------------------------*/
+
+.section-title {
+    text-align: center;
+    gap: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include responsive(allPhone) {
+        padding-bottom: 0;
+    }
+    @include responsive(xxs) {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    &.text-left {
+        text-align: left;
+    }
+    &.white-color {
+        color: $white;
+        .title {
+            color: $white;
+        }
+    }
+    &.center-text {
+        text-align: center;
+    }
+    &.section-border-bottom {
+        border-bottom: 1px solid rgba($steam-color, .4);
+        padding-bottom: 30px;
+        @include responsive(allPhone) {
+            padding-bottom: 20px;
+        }
+    }
+    .title {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 42px;
+        color: var(--heading-color);
+        font-family: var(--jost-font);
+        position: relative;
+        margin: -6px 0 0;
+        @include responsive(xxl) {
+            font-size: 34px;
+        }
+        @include responsive(xl) {
+            font-size: 32px;
+        }
+        @include responsive(lg) {
+            font-size: 30px;
+            line-height: 36px;
+        }
+        @include responsive(allPhone) {
+            font-size: 28px;
+            line-height: 36px;
+        }
+        @include responsive(xs) {
+            font-size: 26px;
+            line-height: 32px;
+        }
+        @include responsive(vxxs) {
+            font-size: 25px;
+            line-height: 28px;
+        }
+    }
+    .section-para {
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: 20px;
+    }
+    .btn-wrapper {
+        .view-all {
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.section-title-two {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    &.text-left {
+        text-align: left;
+    }
+    .title {
+        font-size: 48px;
+        font-weight: 500;
+        line-height: 55px;
+        color: var(--heading-color);
+        font-family: var(--jost-font);
+        position: relative;
+        margin: -8px 0 0;
+        @include responsive(xxl) {
+            font-size: 42px;
+        }
+        @include responsive(xl) {
+            font-size: 40px;
+            line-height: 48px;
+        }
+        @include responsive(lg) {
+            font-size: 36px;
+            line-height: 42px;
+        }
+        @include responsive(allPhone) {
+            font-size: 32px;
+            line-height: 36px;
+        }
+        @include responsive(xs) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include responsive(vxxs) {
+            font-size: 26px;
+            line-height: 30px;
+        }
+    }
+    .para {
+        font-size: 18px;
+        line-height: 28px;
+        margin-top: 15px;
+        @include responsive(allPhone) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+}
+
+.section-title-btn {
+    .view-all {
+        padding: 10px 30px;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--light-color);
+        border: 1px solid var(--light-color);
+        @include transition(300ms);
+        &:hover {
+            background-color: var(--light-color);
+            color: $white;
+        }
+    }
+}

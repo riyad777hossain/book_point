@@ -1,0 +1,108 @@
+/* Mission area */
+
+.mission-area {}
+
+.mission-image-padding {
+    padding: 20px 40px 0 20px;
+    @include responsive(lg) {
+        padding: 20px 20px 0 20px;
+    }
+    @include responsive(allPhone) {
+        padding: 20px 0px 0 20px;
+    }
+}
+
+.mission-area {
+    &.style-02 {
+        .mission-image-padding {
+            padding: 20px 20px 0 40px;
+            @include responsive(lg) {
+                padding: 20px 20px 0 20px;
+            }
+            @include responsive(allPhone) {
+                padding: 20px 20px 0 0px;
+            }
+        }
+        .row {
+            flex-direction: row-reverse;
+        }
+        .row-reverse {
+            flex-direction: row-reverse;
+        }
+        .single-mission {
+            &-image {
+                border-left: 0;
+                border-right: 10px solid $white;
+                border-top: 10px solid $white;
+                &::after {
+                    left: auto;
+                    right: -30px;
+                    background-color: var(--main-color-two);
+                }
+            }
+        }
+    }
+}
+
+.single-mission {
+    &-content {
+        &-title {
+            font-size: 48px;
+            line-height: 55px;
+            margin: -8px 0 0;
+            @include responsive(xxl) {
+                font-size: 45px;
+            }
+            @include responsive(xl) {
+                font-size: 42px;
+            }
+            @include responsive(lg) {
+                font-size: 36px;
+            }
+            @include responsive(allPhone) {
+                font-size: 32px;
+                line-height: 42px;
+            }
+            @include responsive(xxs) {
+                font-size: 28px;
+                line-height: 36px;
+            }
+            @include responsive(vxxs) {
+                font-size: 26px;
+                line-height: 32px;
+            }
+        }
+        &-para {
+            font-size: 16px;
+            line-height: 26px;
+            @include responsive(lg) {
+                font-size: 15px;
+            }
+            @include responsive(xs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+    }
+    &-image {
+        position: relative;
+        background-color: $white;
+        border-left: 10px solid $white;
+        border-top: 10px solid $white;
+        &::after {
+            height: 90%;
+            width: 50%;
+            position: absolute;
+            content: "";
+            left: -30px;
+            top: -30px;
+            background-color: var(--main-color-one);
+            z-index: -1;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}

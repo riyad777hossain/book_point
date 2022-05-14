@@ -1,0 +1,92 @@
+/* Blog area */
+
+.blog-area {}
+
+.color-two {
+    .single-blog {
+        &-contents {
+            &-title {
+                &:hover {
+                    color: var(--main-color-two);
+                }
+            }
+            &-title-two {
+                &:hover {
+                    color: var(--main-color-two);
+                }
+            }
+        }
+    }
+}
+
+.single-blog {
+    &-thumb {
+        img {}
+    }
+    &-contents {
+        &-title {
+            font-size: 24px;
+            line-height: 32px;
+            margin: -6px 0 0;
+            @include transition(200ms);
+            &:hover {
+                color: var(--main-color-one);
+            }
+            @include responsive(xl) {
+                font-size: 22px;
+            }
+            @include responsive(lg) {
+                font-size: 22px;
+            }
+            @include responsive(allPhone) {
+                font-size: 22px;
+            }
+            @include responsive(xxs) {
+                font-size: 20px;
+            }
+        }
+        &-title-two {
+            font-size: 18px;
+            line-height: 28px;
+            @include transition(200ms);
+            &:hover {
+                color: var(--main-color-one);
+            }
+        }
+        &-para {
+            font-size: 16px;
+            line-height: 26px;
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+        }
+        .btn-blog {
+            color: var(--main-color-one);
+            display: inline-block;
+            font-size: 16px;
+            text-decoration: underline;
+            @include transition(200ms);
+            &:hover {
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+.single-blog-item-child {
+    .single-blog {
+        &:not(:last-child) {
+            padding-bottom: 20px;
+            @include responsive(xxl) {
+                padding-bottom: 15px;
+            }
+        }
+        &:not(:first-child) {
+            padding-top: 20px;
+            border-top: 2px solid rgba($steam-color, .5);
+            @include responsive(xxl) {
+                padding-top: 15px;
+            }
+        }
+    }
+}

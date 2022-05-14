@@ -1,0 +1,66 @@
+/* Contact area */
+
+.contact-area {}
+
+.form-details-padding {
+    padding: 30px;
+}
+
+.contact-form-details {
+    &-title {
+        font-size: 36px;
+        line-height: 42px;
+        @include responsive(xxs) {
+            font-size: 32px;
+            line-height: 36px;
+        }
+        @include responsive(xs) {
+            font-size: 32px;
+        }
+        @include responsive(xxs) {
+            font-size: 30px;
+        }
+        @include responsive(vxxs) {
+            font-size: 28px;
+        }
+    }
+    &-para {
+        font-size: 16px;
+        line-height: 28px;
+        @include responsive(vxxs) {
+            font-size: 15px;
+            line-height: 26px;
+        }
+    }
+}
+
+.single-contact {
+    &-content {
+        &-title {
+            font-size: 24px;
+            line-height: 32px;
+            margin: -4px 0 0;
+        }
+        &-item {
+            font-size: 15px;
+            @include transition(200ms);
+            &:hover {
+                color: var(--main-color-one);
+            }
+        }
+    }
+}
+
+.contact-map-wrapper {}
+
+.contact-map {
+    iframe {
+        width: 100%;
+    }
+}
+
+.map-height {
+    iframe {
+        height: 530px;
+    }
+}

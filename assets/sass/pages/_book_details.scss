@@ -1,0 +1,527 @@
+/* Book Details */
+
+.bookdetails-area {}
+
+.book-details-wrapper {
+    &-flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        @include responsive(allPhone) {
+            display: block;
+        }
+    }
+}
+
+.book-details-product {
+    flex: 1;
+    &.details-product-padding {
+        padding: 20px;
+    }
+    &-thumb-border {
+        border: 2px solid rgba($steam-color, .4);
+    }
+    &-thumb-padding {
+        padding: 100px 80px;
+        @include responsive(xxl) {
+            padding: 70px 60px;
+        }
+        @include responsive(xl) {
+            padding: 70px 50px;
+        }
+        @include responsive(lg) {
+            padding: 70px 20px;
+        }
+        @include responsive(allPhone) {
+            padding: 60px;
+        }
+        @include responsive(xs) {
+            padding: 40px;
+        }
+        @include responsive(vxxs) {
+            padding: 20px;
+        }
+    }
+    &-flex {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        @include responsive(xl) {
+            gap: 20px;
+        }
+        @include responsive(lg) {
+            gap: 20px;
+        }
+        @include responsive(allPhone) {
+            display: block;
+        }
+    }
+    &-thumb {
+        &.bg-image {
+            height: 430px;
+            width: 310px;
+            @include responsive(xl) {
+                width: 270px;
+            }
+            @include responsive(lg) {
+                width: 270px;
+            }
+            @include responsive(allPhone) {
+                margin: auto;
+            }
+            @include responsive(xxs) {
+                width: 100%;
+                height: 370px;
+            }
+        }
+    }
+    &-contents {
+        @include responsive(allPhone) {
+            margin-top: 24px;
+        }
+        &-title {
+            font-size: 24px;
+            line-height: 32px;
+            @include responsive(lg) {
+                font-size: 20px;
+                line-height: 30px;
+            }
+            @include responsive(sm) {
+                font-size: 22px;
+                line-height: 30px;
+            }
+        }
+        &-flex {
+            display: flex;
+            align-items: center;
+            gap: 15px 30px;
+            @include responsive(lg) {
+                flex-wrap: wrap;
+            }
+            @include responsive(allPhone) {
+                flex-wrap: wrap;
+            }
+        }
+        .available-stock {
+            position: relative;
+            padding-left: 30px;
+            &::before {
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                left: 0;
+                @include lineawesomeicon("\f00c");
+                font-size: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 20px;
+                width: 20px;
+                background-color: var(--main-color-one);
+                color: $white;
+                border-radius: 50%;
+            }
+        }
+        &-category {
+            &-list {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                padding-bottom: 24px;
+                border-bottom: 1px solid rgba($steam-color, .5);
+                &:not(:first-child) {
+                    padding-top: 24px;
+                    @include responsive(lg) {
+                        padding-top: 15px;
+                    }
+                }
+                @include responsive(lg) {
+                    padding-bottom: 15px;
+                    font-size: 15px;
+                }
+                &-item {
+                    position: relative;
+                    @include transition(300ms);
+                    &:not(:first-child) {
+                        padding-left: 10px;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            @include transform(translateY(-50%));
+                            background-color: $steam-color;
+                            height: 70%;
+                            width: 2px;
+                        }
+                    }
+                    &:not(:last-child) {
+                        padding-right: 10px;
+                    }
+                    &:hover {
+                        color: var(--main-color-one);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.book-details-sidebar-content {
+    width: 250px;
+    @include responsive(xl) {
+        width: 220px;
+    }
+    @include responsive(allPhone) {
+        margin-top: 24px;
+    }
+    @include responsive(vxxs) {
+        width: 100%;
+    }
+    &.sidebar-content-padding {
+        padding: 20px;
+    }
+    &-single {
+        &:not(:last-child) {
+            padding-bottom: 25px;
+            @include responsive(xxl) {
+                padding-bottom: 19px;
+            }
+            @include responsive(xl) {
+                padding-bottom: 19px;
+            }
+            @include responsive(lg) {
+                padding-bottom: 22px;
+            }
+        }
+        &:not(:first-child) {
+            padding-top: 25px;
+            @include responsive(xxl) {
+                padding-top: 19px;
+            }
+            @include responsive(xl) {
+                padding-top: 19px;
+            }
+            @include responsive(lg) {
+                padding-top: 22px;
+            }
+        }
+        &.single-sidebar-border {
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($steam-color, .4);
+            }
+        }
+    }
+    &-sub {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+    &-title {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+
+/* Book Review Area */
+
+.bookreview-area {}
+
+.bookreviewer-padding {
+    padding: 30px;
+    @include responsive(xxs) {
+        padding: 20px;
+    }
+}
+
+.bookreview-left-wrapper {}
+
+.bookreview-tab {
+    display: flex;
+    align-items: center;
+    li {
+        padding: 10px 20px;
+        background-color: $steam-color;
+        color: var(--heading-color);
+        cursor: pointer;
+        &.active {
+            background-color: var(--main-color-one);
+            color: $white;
+        }
+    }
+}
+
+.bookreview-top-border {
+    border-top: 1px solid rgba($steam-color, .5);
+}
+
+.bookreview-contents-padding-botttom {
+    padding-bottom: 30px;
+}
+
+.bookreview-contents {
+    &-top {}
+    &-flex {
+        display: flex;
+        align-items: flex-start;
+        gap: 50px;
+        @include responsive(xl) {
+            gap: 30px;
+        }
+        @include responsive(lg) {
+            gap: 30px;
+        }
+        @include responsive(allPhone) {
+            gap: 30px;
+        }
+        @include responsive(xs) {
+            flex-wrap: wrap;
+        }
+    }
+    &-right {
+        flex-basis: 70%;
+        @include responsive(xl) {
+            flex-basis: 60%;
+        }
+        @include responsive(lg) {
+            flex-basis: 58%;
+        }
+        @include responsive(xs) {
+            flex-basis: 100%;
+        }
+    }
+    &-single {
+        padding-top: 20px;
+        @include responsive(xl) {
+            padding-top: 15px;
+        }
+        @include responsive(lg) {
+            padding-top: 15px;
+        }
+        &:not(:last-child) {
+            padding-bottom: 20px;
+            @include responsive(xl) {
+                padding-bottom: 15px;
+            }
+            @include responsive(lg) {
+                padding-bottom: 15px;
+            }
+        }
+        &-flex {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        &-thumb {
+            height: 60px;
+            width: 60px;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        &-contents {
+            &-title {
+                font-size: 20px;
+            }
+            &-sub {
+                display: block;
+                font-size: 15px;
+                margin-top: 7px;
+            }
+        }
+        &-bottom {
+            &-flex {
+                display: flex;
+                align-items: center;
+                gap: 15px 20px;
+            }
+            &-verified {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: $bg-new;
+            }
+            &-para {
+                font-size: 16px;
+                line-height: 26px;
+                @include responsive(lg) {
+                    font-size: 14px;
+                }
+                @include responsive(allPhone) {
+                    font-size: 15px;
+                }
+                @include responsive(xxs) {
+                    font-size: 14px;
+                }
+            }
+            &-icon {
+                display: flex;
+                align-items: center;
+                gap: 10px 20px;
+                i {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+/* Book Review Author */
+
+.bookreview-contents-author {
+    &-flex {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include responsive(xxs) {
+            flex-wrap: wrap;
+        }
+    }
+    &-thumb {
+        height: 80px;
+        width: 80px;
+        img {
+            object-fit: cover;
+        }
+    }
+    &-content {
+        flex: 1;
+        @include responsive(xxs) {
+            flex: unset;
+        }
+        &-title {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+    &-details {
+        border: 1px solid rgba($steam-color, .4);
+        padding: 20px;
+        @include responsive(vxxs) {
+            padding: 10px;
+        }
+        &-list {
+            &-item {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                font-size: 15px;
+                &:not(:first-child) {
+                    padding-top: 10px;
+                }
+                &:not(:last-child) {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+        &-para {
+            font-size: 16px;
+            line-height: 28px;
+            @include responsive(xxs) {
+                font-size: 15px;
+            }
+            @include responsive(vxxs) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+
+/* Related Books */
+
+.related-books-wrapper {}
+
+.related-books-title {
+    font-size: 24px;
+    line-height: 32px;
+    margin: -6px 0 0;
+}
+
+.single-related-books {
+    .upcoming-padding-top {}
+    .single-upcoming {
+        &-thumb {
+            @include responsive(lg) {
+                width: 120px;
+                height: 200px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        &-contents {
+            @include responsive(lg) {
+                padding-left: 150px;
+                padding-right: 60px;
+            }
+            &-title {
+                @include responsive(lg) {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+
+/* Pdf Preview css */
+
+.pdf-preview-container {
+    background: $white;
+    padding: 30px;
+    @include box-shadow(0, 0, 20px, rgba($steam-color, .7));
+    margin: 0 auto;
+    width: 100%;
+    iframe {
+        min-width: 100%;
+    }
+    @include responsive(allPhone) {
+        padding: 20px;
+    }
+    @include responsive(xs) {
+        margin: 0 10px;
+    }
+}
+
+.preview-title {
+    font-size: 48px;
+    line-height: 55px;
+    @include responsive(xl) {
+        font-size: 42px;
+        line-height: 48px;
+    }
+    @include responsive(lg) {
+        font-size: 42px;
+        line-height: 48px;
+    }
+    @include responsive(allPhone) {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    @include responsive(xs) {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    @include responsive(xxs) {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    @include responsive(vxxs) {
+        font-size: 26px;
+    }
+}
+
+#sidenav-container {
+    display: none !important;
+    @include responsive(allPhone) {
+        display: none !important;
+    }
+}

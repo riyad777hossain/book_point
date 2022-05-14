@@ -1,0 +1,85 @@
+/* Upcoming area */
+
+.upcoming-area {}
+
+.upcoming-padding {
+    padding: 20px;
+}
+
+.upcoming-padding-top {
+    padding-top: 50px;
+    @include responsive(xvxs) {
+        padding-top: 0;
+    }
+}
+
+.single-upcoming {
+    position: relative;
+    &-wrapper {
+        @include box-shadow(0, 0, 20px, rgba($steam-color, .4));
+        &-contents {
+            position: relative;
+        }
+    }
+    &-thumb {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        max-width: 142px;
+        @include responsive(xvxs) {
+            position: initial;
+            margin-bottom: 15px;
+        }
+    }
+    &-contents {
+        padding: 20px;
+        padding-left: 180px;
+        padding-right: 70px;
+        position: relative;
+        min-height: 170px;
+        @include responsive(xvxs) {
+            height: auto;
+            padding-left: 20px;
+        }
+        &-badge {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            &-box {
+                font-size: 12px;
+                line-height: 20px;
+                padding: 4px 10px;
+                color: $white;
+                display: table;
+                &:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+        &-title {
+            font-size: 18px;
+            line-height: 28px;
+            @include responsive(xxs) {
+                font-size: 16px;
+            }
+        }
+        &-subtitle {
+            font-size: 15px;
+        }
+    }
+    &-bottom {
+        padding: 20px;
+        &.bottom-border-top {
+            border-top: 1px solid rgba($steam-color, .4);
+        }
+        &-flex {
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .pre-order-btn {
+            color: var(--main-color-one);
+        }
+    }
+}
